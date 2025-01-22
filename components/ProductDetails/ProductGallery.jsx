@@ -28,11 +28,7 @@ export const ProductGallery = ({ slug, color }) => {
     refetchOnWindowFocus: false,
   });
 
-  const [[x, y], setXY] = useState([0, 0]);
-
-    const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
-
-    const [showMagnifier, setShowMagnifier] = useState(false);
+  
 
   const [gallery, setGallery] = useState(productGallery?.gallery || []);
 
@@ -42,6 +38,11 @@ export const ProductGallery = ({ slug, color }) => {
   function ImageMagnifier({ src, onClick = () => {},    magnifierHeight = 300,
   magnifierWidth = 300,
   zoomLevel = 2.5, }) {
+    const [[x, y], setXY] = useState([0, 0]);
+
+    const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
+
+    const [showMagnifier, setShowMagnifier] = useState(false);
     return (
       <div
         style={{
@@ -142,7 +143,7 @@ export const ProductGallery = ({ slug, color }) => {
     })
   ) : (
     <SwiperSlide>
-      <ImageMagnifier src={noImage} /> {/* Render the fallback image if gallery is empty */}
+      <Image src={noImage} /> {/* Render the fallback image if gallery is empty */}
     </SwiperSlide>
   );
 
@@ -232,6 +233,10 @@ export const ProductGallery = ({ slug, color }) => {
       setTimeout(() => {
         setLoading(false);
       }, 1000);
+    } else {
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
     }
   }, [color]);
 
@@ -467,12 +472,7 @@ export const ProductGallery = ({ slug, color }) => {
               setModalImage(null);
             }}
           ></div>
-          {/* <i
-            className={`fas fa-times absolute top-2 left-2 z-50 text-[#e10000] bg-white rounded-xl px-2 py-1 text-xl cursor-pointer`}
-            onClick={() => {
-              setModalImage(null);
-            }}
-          ></i> */}
+
         </div>
       )}
     </div>

@@ -409,7 +409,7 @@ export default function Variants({
                     return (
                       <div
                         key={value.id}
-                        className={display === "show" ? `block` : `hidden`}
+                        className={display === "show" ? `block` : ``}
                       >
                         <button
                           onClick={(e) => {
@@ -436,7 +436,7 @@ export default function Variants({
                           className={
                             display === "show"
                               ? `block text-[0.875rem] button-with-tooltip`
-                              : `hidden`
+                              : ``
                           }
                           aria-label={value.name}
                         >
@@ -450,7 +450,7 @@ export default function Variants({
                                       className={`absolute right-0 left-0 m-auto top-0 bottom-0 rounded-full w-[30px] h-[30px] 
                                         bg-transparent border-2 border-white ${
                                         value.name === "BELA"
-                                          ? "border-black/20"
+                                          ? "border-black/80"
                                           : ``
                                       } `}
                                       
@@ -487,10 +487,10 @@ export default function Variants({
                               {isSelected && (
                                     <div
                                       className={`absolute right-0 left-0 m-auto top-0 bottom-0 rounded-full w-[30px] h-[30px] 
-                                        bg-transparent border-2 border-white ${
+                                        bg-transparent border-2  ${
                                         value.name === "BELA"
-                                          ? "border-black/80"
-                                          : ``
+                                          ? "border-black"
+                                          : `border-white`
                                       } `}
                                       
                                     ></div>
@@ -521,7 +521,7 @@ export default function Variants({
                            `
                                   : `bg-white border border-transparent hover:border-[#ccc]`
                               } w-[32px] h-[32px] rounded-full text-base`
-                            : `hidden`
+                            : ``
                         }
                         onClick={(e) => {
                           e.preventDefault();

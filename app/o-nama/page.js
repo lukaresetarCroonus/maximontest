@@ -1,4 +1,4 @@
-import Nazaddugme from "../../components/nazaddugme/page";
+export const revalidate = 30;
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";

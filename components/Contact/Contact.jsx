@@ -208,7 +208,7 @@ const Contact = () => {
         </form>
 
         {/* Contact Information */}
-        <div className="flex flex-col justify-between bg-gray-50 p-14 mb-2 max-sm:px-2">
+        <div className="flex flex-col justify-between bg-gray-50 p-14 mb-2 max-sm:px-2" style={{ height: "254px", overflow: "hidden" }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
             <div className="flex flex-col gap-1">
               <h2 className="text-lg font-semibold">Budimo u kontaktu</h2>

@@ -263,7 +263,7 @@ export const ProductInfo = ({ id, path, canonical,color,setColor }) => {
               <Wishlist product={product} />
             </Suspense>
             <button
-              disabled={isPending}
+              disabled={isPending || !notSelected}
               className={`relative w-[240px] h-[42px] lg:w-[400px] flex justify-center items-center uppercase text-sm font-normal border border-black bg-white text-black transition-all duration-300 ${
                 tempError ? `bg-red-500` : `hover:bg-black hover:text-white`
               }`}
